@@ -10,25 +10,25 @@ public class DeleteView {
     private StudentController studentController = new StudentController();
 
     public void showDeleteDisciplineMenu() {
-        ioService.print("--------------- DELETE DISCIPLINE ---------------");
-        String code = ioService.read("Discipline code to delete: ");
-        String confirmation = ioService.read("Are you sure you want to delete this discipline? (y/N): ");
+        ioService.print("--------------- EXCLUIR DISCIPLINA ---------------");
+        String code = ioService.read("Código da disciplina a ser excluída: ");
+        String confirmation = ioService.read("Tem certeza que deseja excluir esta disciplina? (y/N): ");
         String result = disciplineController.delete(code, confirmation);
         ioService.print(result);
     }
 
     public void showDeleteStudentMenu() {
-        ioService.print("--------------- DELETE STUDENT ---------------");
-        String registration = ioService.read("Student registration to delete: ");
-        String confirmation = ioService.read("Are you sure you want to delete this student? (y/N): ");
+        ioService.print("--------------- EXCLUIR ALUNO ---------------");
+        String registration = ioService.read("Matrícula do aluno a ser excluído: ");
+        String confirmation = ioService.read("Tem certeza que deseja excluir este aluno? (y/N): ");
         String result = studentController.delete(registration, confirmation);
         ioService.print(result);
     }
 
     public void showUnenrollStudentMenu() {
-        ioService.print("--------------- UNENROLL STUDENT FROM DISCIPLINE ---------------");
-        String code = ioService.read("Discipline code: ");
-        String registration = ioService.read("Student registration: ");
+        ioService.print("--------------- DESMATRICULAR ALUNO DA DISCIPLINA ---------------");
+        String code = ioService.read("Código da disciplina: ");
+        String registration = ioService.read("Matrícula do aluno: ");
         String result = disciplineController.unenrollStudent(code, registration);
         ioService.print(result);
     }

@@ -10,28 +10,28 @@ public class RegisterView {
     private StudentController studentController = new StudentController();
 
     public void showRegisterDisciplineMenu() {
-        ioService.print("--------------- REGISTER DISCIPLINE ---------------");
-        String name = ioService.read("Discipline name: ");
-        String code = ioService.read("Discipline code: ");
-        String workload = ioService.read("Discipline workload: ");
+        ioService.print("--------------- CADASTRAR DISCIPLINA ---------------");
+        String name = ioService.read("Nome da disciplina: ");
+        String code = ioService.read("Código da disciplina: ");
+        String workload = ioService.read("Carga horária da disciplina: ");
         String result = disciplineController.register(name, code, workload);
         ioService.print(result);
     }
 
     public void showRegisterStudentMenu() {
-        ioService.print("--------------- REGISTER STUDENT ---------------");
-        String registration = ioService.read("Student registration: ");
-        String name = ioService.read("Student name: ");
-        String email = ioService.read("Student email: ");
-        String address = ioService.read("Student address: ");
+        ioService.print("--------------- CADASTRAR ALUNO ---------------");
+        String registration = ioService.read("Matrícula do aluno: ");
+        String name = ioService.read("Nome do aluno: ");
+        String email = ioService.read("Email do aluno: ");
+        String address = ioService.read("Endereço do aluno: ");
         String result = studentController.register(registration, name, email, address);
         ioService.print(result);
     }
 
     public void showEnrollStudentMenu() {
-        ioService.print("--------------- ENROLL STUDENT IN DISCIPLINE ---------------");
-        String code = ioService.read("Discipline code: ");
-        String registration = ioService.read("Student registration: ");
+        ioService.print("--------------- MATRICULAR ALUNO NA DISCIPLINA ---------------");
+        String code = ioService.read("Código da disciplina: ");
+        String registration = ioService.read("Matrícula do aluno: ");
         String result = disciplineController.enrollStudent(code, registration);
         ioService.print(result);
     }

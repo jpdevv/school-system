@@ -26,18 +26,6 @@ public class Discipline {
         students.remove(student);
     }
 
-    public String infos() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Discipline: ").append(name).append("\n");
-        sb.append("Code: ").append(code).append("\n");
-        sb.append("Workload: ").append(workload).append("\n");
-        sb.append("Students enrolled:\n");
-        for (Student student : students) {
-            sb.append(student.toString()).append("\n");
-        }
-        return sb.toString();
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -65,13 +53,13 @@ public class Discipline {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Discipline [name=").append(name)
-          .append(", code=").append(code)
-          .append(", workload=").append(workload)
-          .append("]\n- Students enrolled:\n");
+        sb.append("Disciplina [nome=").append(name)
+          .append(", código=").append(code)
+          .append(", carga horária=").append(workload)
+          .append("]\n- Alunos matriculados:\n");
         
         if (students.isEmpty()) {
-            sb.append("No students enrolled.\n");
+            sb.append("Nenhum aluno matriculado.\n");
         } else {
             for (Student student : students) {
                 sb.append("-- ").append(student.toString()).append("\n");

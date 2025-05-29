@@ -11,27 +11,27 @@ public class ListView {
     private static MenuView menuView = new MenuView();
 
     public void showListMenu() {
-        ioService.print("--------------- LIST MENU ---------------");
-        ioService.print("1 - List Disciplines");
-        ioService.print("2 - List Students");
-        ioService.print("0 - Back to Main Menu");
-        String option = ioService.read("Choose an option: ");
+        ioService.print("--------------- MENU DE LISTAGEM ---------------");
+        ioService.print("1 - Listar Disciplinas");
+        ioService.print("2 - Listar Alunos");
+        ioService.print("0 - Voltar ao Menu Principal");
+        String option = ioService.read("Escolha uma opção: ");
         switch(option) {
             case "0" -> menuView.showMainMenu();
             case "1" -> showListDisciplines();
             case "2" -> showListStudents();
-            default -> ioService.print("Invalid option. Please try again.");
+            default -> ioService.print("Opção inválida. Por favor, tente novamente.");
         }
     }
 
     public void showListDisciplines() {
-        ioService.print("--------------- LIST OF DISCIPLINES ---------------");
+        ioService.print("--------------- LISTA DE DISCIPLINAS ---------------");
         String result = disciplineController.list();
         ioService.print(result);
     }
 
     public void showListStudents() {
-        ioService.print("--------------- LIST OF STUDENTS ---------------");
+        ioService.print("--------------- LISTA DE ALUNOS ---------------");
         String result = studentController.list();
         ioService.print(result);
     }

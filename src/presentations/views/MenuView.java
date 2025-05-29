@@ -12,22 +12,22 @@ public class MenuView {
 
     // Method to show the main menu
     public void showMainMenu() {
-        ioService.print("--------------- SCHOOL SYSTEM ---------------");
-        ioService.print("1 - Register Discipline");
-        ioService.print("2 - Register Student");
-        ioService.print("3 - Enroll Student in Discipline");
-        ioService.print("4 - Delete Discipline");
-        ioService.print("5 - Delete Student");
-        ioService.print("6 - Unenroll Student from Discipline");
-        ioService.print("7 - Update Discipline");
-        ioService.print("8 - Update Student");
-        ioService.print("9 - List");
-        ioService.print("0 - Exit");
-        String option = ioService.read("Choose an option: ");
+        ioService.print("--------------- SISTEMA ESCOLAR ---------------");
+        ioService.print("1 - Cadastrar Disciplina");
+        ioService.print("2 - Cadastrar Aluno");
+        ioService.print("3 - Matricular Aluno na Disciplina");
+        ioService.print("4 - Excluir Disciplina");
+        ioService.print("5 - Excluir Aluno");
+        ioService.print("6 - Desmatricular Aluno da Disciplina");
+        ioService.print("7 - Atualizar Disciplina");
+        ioService.print("8 - Atualizar Aluno");
+        ioService.print("9 - Listar");
+        ioService.print("0 - Sair");
+        String option = ioService.read("Escolha uma opção: ");
 
         switch(option) {
             case "0" -> {
-                ioService.print("Exiting the application. Goodbye!");
+                ioService.print("Saindo da aplicação. Até mais!");
                 System.exit(0);
             }
             case "1" -> registerView.showRegisterDisciplineMenu();
@@ -39,7 +39,7 @@ public class MenuView {
             case "7" -> updateView.showUpdateDisciplineMenu();
             case "8" -> updateView.showUpdateStudentMenu();
             case "9" -> listView.showListMenu();
-            default -> ioService.print("[ERROR] - Invalid option. Please try again.");
+            default -> ioService.print("[ERRO] - Opção inválida. Por favor, tente novamente.");
         }
     }
 }
